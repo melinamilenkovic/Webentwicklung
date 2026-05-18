@@ -9,8 +9,31 @@
   <!-- Verlinkung zur CSS Datei -->
 
   <link rel="stylesheet" href="styles.css" />
+  <!-- Verlinkung zur Java-Skript Datei -->
+  <script src="script.js" defer></script>
 </head>
 <body>
+</body>
+  <section id="workoutApp">
+
+    <h2>🏋️ Workout Planer</h2>
+
+    <input 
+        type="text" 
+        id="workoutInput" 
+        placeholder="Neues Workout eingeben"
+    >
+
+    <button id="addWorkoutBtn">
+        Hinzufügen
+    </button>
+
+    <div id="workoutContainer"></div>
+
+</section>
+
+<script src="script.js"></script>
+
 
   <header>
     <h1>🏋️ Fitly</h1>
@@ -48,7 +71,7 @@
   </ul>
 
   <button onclick="editList(this)">Bearbeiten</button>
-  <button onclick="deleteSection(this)">Löschen</button>
+  <button id="myButton" onclick="deleteSection(this)">Löschen</button>
 </section>
 
 <section id="ernaehrung" class="card">
@@ -79,36 +102,6 @@
   <footer>
     <p>© 2026 Fitness Dashboard (statische Demo-Seite)</p>
   </footer>
-
-  <script>
-    function deleteSection(button) {
-      button.parentElement.remove();
-    }
-
-    function editSection(button) {
-      let section = button.parentElement;
-      let spans = section.querySelectorAll("span");
-
-      spans.forEach(span => {
-        let neuerWert = prompt("Neuer Wert:", span.textContent);
-        if (neuerWert !== null) {
-          span.textContent = neuerWert;
-        }
-      });
-    }
-
-    function editList(button) {
-      let section = button.parentElement;
-      let items = section.querySelectorAll("li");
-
-      items.forEach(li => {
-        let neuerText = prompt("Neuer Eintrag:", li.textContent);
-        if (neuerText !== null) {
-          li.textContent = neuerText;
-        }
-      });
-    }
-  </script>
 
 </body>
 </html>
